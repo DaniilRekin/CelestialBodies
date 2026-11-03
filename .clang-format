@@ -1,0 +1,13 @@
+BasedOnStyle: Google
+IndentWidth: 2
+TabWidth: 2
+ContinuationIndentWidth: 2
+UseTab: Never
+ColumnLimit: 100
+AllowShortCaseLabelsOnASingleLine: true
+Cpp11BracedListStyle: true
+AlignAfterOpenBracket: BlockIndent
+BreakBeforeBraces: Attach
+BinPackArguments: false
+BinPackParameters: false
+AllowShortFunctionsOnASingleLine: Empty

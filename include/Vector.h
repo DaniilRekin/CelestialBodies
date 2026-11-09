@@ -1,6 +1,8 @@
 #pragma once
 #include "Point.h"
 
+struct Point;
+
 struct Vector {
   double x;
   double y;

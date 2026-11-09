@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Название проекта
-project(MyProject
+project(CelestialBodies
     VERSION 1.0
     DESCRIPTION "My C++ project"
     LANGUAGES CXX
@@ -15,9 +15,15 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Папка с заголовочными файлами
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
+find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+find_package(OpenGL REQUIRED)
+find_package(OpenMP REQUIRED)
+
 # Исходные файлы
 set(SOURCES
     src/main.cpp
+    src/Point.cpp
+    src/Vector.cpp
     src/Engine.cpp
 )
 
@@ -28,6 +34,15 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(CelestialBodies
+    PRIVATE
+        sfml-graphics
+        sfml-window
+        sfml-system
+        OpenGL::GL
+        OpenMP::OpenMP_CXX
 )
 
 # Предупреждения компилятора
